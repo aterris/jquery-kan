@@ -18,25 +18,22 @@
 			var settings = {
 				'anchor' : '.entry-title',
 				'link' : '.entry-title a',
-				'x-offset' : 0,
-				'y-offset' : 0,			
+				'xoffset' : 0,
+				'yoffset' : 0,			
 				'next' : null,
 				'prev' : null,
 				'html' : '<span style="color: #4273DB;">&#9658;</span>'	
 			};
 
 			var focus = false;
-		
+			
 			//Merge Defaults With User Supplied Options
 			if ( options ) { 
 				$.extend( settings, options );
 			}
-
-			//Setup Other Settings
-			settings.articles = this;
 		
 			//Work on Each Article Element Given
-			settings.articles.each(function(n){
+			this.each(function(n){
 				this.index = n;
 				$(this).addClass('kan-article');
 			});
@@ -47,23 +44,26 @@
 
 			//Create Indicator Markup
 			$('body').append('<div id="kan-indicator">' + settings.html + '</div>');
-
-		
+			
+			
 			//Find First Article Position
 			settings.current = $('.kan-article:first');
-			//settings.current.addClass('kan-active');
 			var position = settings.current.find(settings.anchor).position();
-		
-			//Set Initial Position
+
+			//Position Indicator Absolutely
 			$('#kan-indicator').css('position','absolute');
-			$('#kan-indicator').css('top',position.top + $('.kan-article:first '+settings.anchor).height()/2 - $('#kan-indicator').height()/2 + 'px');
-			$('#kan-indicator').css('left',position.left - $('#kan-indicator').width() + 'px');
+
+			//Setup Adjusted Offset		
+			settings.xoffset = settings.xoffset - $('#kan-indicator').width();
+			settings.yoffset = settings.yoffset + $('.kan-article:first '+settings.anchor).height()/2 - $('#kan-indicator').height()/2;
+			
+			//Set Indicator Position
+			$('#kan-indicator').css('top',position.top + settings.yoffset + 'px');
+			$('#kan-indicator').css('left',position.left +settings.xoffset + 'px');
 
 
 			//Bind Keydown Event
 			$(document).bind('keydown.kan', function(e) {
-			// $(document).keydown(function(e){
-			
 				if ( e.keyCode == 38 && settings.current.prevAll('.kan-article:first').length != 0 && !focus ) //If Up Arrow
 				{				
 					//Set New Active Article					
@@ -75,8 +75,8 @@
 					
 					//Set New Indicator Position					
 					position = settings.current.find(settings.anchor).position();
-					$('#kan-indicator').css('top',position.top + $('.kan-article:first '+settings.anchor).height()/2 - $('#kan-indicator').height()/2 + 'px');
-					$('#kan-indicator').css('left',position.left - $('#kan-indicator').width() + 'px');	
+					$('#kan-indicator').css('top',position.top + settings.yoffset + 'px');
+					$('#kan-indicator').css('left',position.left +settings.xoffset + 'px');	
 				}
 				else if ( e.keyCode == 40 && settings.current.nextAll('.kan-article:first').length != 0 && !focus ) //If Down Arrow
 				{
@@ -89,8 +89,8 @@
 
 					//Set New Indicator Position					
 					position = settings.current.find(settings.anchor).position();
-					$('#kan-indicator').css('top',position.top + $('.kan-article:first '+settings.anchor).height()/2 - $('#kan-indicator').height()/2 + 'px');
-					$('#kan-indicator').css('left',position.left - $('#kan-indicator').width() + 'px');			
+					$('#kan-indicator').css('top',position.top + settings.yoffset + 'px');
+					$('#kan-indicator').css('left',position.left +settings.xoffset + 'px');			
 				}
 				else if ( e.keyCode == 13 && !focus ) //If Enter Key
 				{
@@ -112,7 +112,7 @@
 
 			return this.each(function(){
 
-				// Namespacing FTW
+				//Unbind Plugin Events
 				$(document).unbind('.kan');
 				$('input, textarea').unbind('.kan');
 
