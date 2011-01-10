@@ -1,14 +1,55 @@
+body
+{
+	margin: 0px;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+}
 #wrapper
 {
-	width:960px;
+	width:725px;
 	margin: 0px auto;
 	padding: 0px;
+
 }
 
-header form
+#main-header
 {
-	width:400px;
-	margin: 0px auto;
+	background:#f0f0f0;
+	color:#d60000;
+	-moz-border-radius: 7px; /* FF1+ */
+	-webkit-border-radius: 7px; /* Saf3-4 */
+	border-radius: 7px; /* Opera 10.5, IE9, Saf5, Chrome */
+	text-shadow:1px 1px 2px #fff;
+	padding:0px 20px;
+}
+
+#main-header h1
+{
+	margin:0px;
+}
+
+#content #form-container
+{
+	border:1px solid #ddd;
+	-moz-border-radius: 7px; /* FF1+ */
+	-webkit-border-radius: 7px; /* Saf3-4 */
+	border-radius: 7px; /* Opera 10.5, IE9, Saf5, Chrome */
+	background:#f8f8f8;
+	margin:25px;
+}
+
+#content form 
+{
+	margin:25px;
+}
+
+#content form input[type="text"]
+{
+	width:78%;
+}
+
+#content form input[type="submit"]
+{
+	width:20%;
 }
 
 
@@ -21,6 +62,8 @@ header form
 #content ul
 {
 	list-style:none;
+	margin: 0px;
+	padding: 0px;
 
 }
 
@@ -37,11 +80,13 @@ header form
 #content ul li .hentry
 {
 	margin:25px;
+	text-shadow:1px 1px 2px #eee;
 }
 
 #content ul li.kan-active
 {
 	background:#f9e5e4;
+	border:1px solid #d60000;
 }
 
 #content ul li .entry-title
@@ -51,5 +96,6 @@ header form
 #content ul li .entry-title a
 {
 	color:#444;
+	text-shadow:2px 2px 4px #ccc;
 	text-decoration:none;
 }

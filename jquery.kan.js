@@ -77,6 +77,8 @@
 					position = settings.current.find(settings.anchor).position();
 					$('#kan-indicator').css('top',position.top + settings.yoffset + 'px');
 					$('#kan-indicator').css('left',position.left +settings.xoffset + 'px');	
+					
+					return false;
 				}
 				else if ( e.keyCode == 40 && settings.current.nextAll('.kan-article:first').length != 0 && !focus ) //If Down Arrow
 				{
@@ -91,11 +93,15 @@
 					position = settings.current.find(settings.anchor).position();
 					$('#kan-indicator').css('top',position.top + settings.yoffset + 'px');
 					$('#kan-indicator').css('left',position.left +settings.xoffset + 'px');			
+				
+					return false;
 				}
 				else if ( e.keyCode == 13 && !focus ) //If Enter Key
 				{
 					var url = settings.current.find(settings.link).attr('href');
-					window.location.href = url;					
+					window.location.href = url;
+
+					return false;					
 				}
 			});
 
@@ -108,7 +114,7 @@
 		
 		add : function ( ) { 
 			return this.each(function(){
-				this.addClass('kan-article');			
+				$(this).addClass('kan-article');			
 			});
 		},
 		destroy : function( ) {
