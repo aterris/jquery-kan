@@ -37,7 +37,7 @@
 
 			//Setup Next and Previous Links	
 			$(settings.next).addClass('kan-next');
-			$(settings.previous).addClass('kan-previous');
+			$(settings.previous).addClass('kan-prev');
 
 			//Create Indicator Markup
 			$('body').append('<div id="kan-indicator">' + settings.html + '</div>');
@@ -121,6 +121,15 @@
 				//Unbind Events
 				$(document).unbind('.kan');
 				$('input, textarea').unbind('.kan');
+		
+				//Remove Added Classes				
+				$('.kan-article').removeClass('kan-article');
+				$('.kan-active').removeClass('kan-active');
+				$('.kan-next').removeClass('kan-next');
+				$('.kan-prev').removeClass('kan-prev');
+
+				//Remove Indicator
+				$('#kan-indicator').remove();
 
 			});
 		}
