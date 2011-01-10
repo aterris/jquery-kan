@@ -9,18 +9,18 @@
 <head>
   <meta charset="utf-8">
 
-  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+  <!-- Force latest IE rendering engine & Chrome Frame -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <title>Keyboad Article Navigation - jQuery Plugin</title>
   <meta name="description" content="Keyboard Article Navigation (jquery.kan.js) is a jQuery Plugin that provides Google Search Inspired Keyboard Navigation to a set of elements">
   <meta name="author" content="Andrew Terris">
 
-  <!-- CSS : implied media="all" -->
+  <!-- Include CSS -->
   <link rel="stylesheet" href="style.css?v=2">
  
-  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
-  <script src="js/libs/modernizr-1.6.min.js"></script>
+  <!-- Include Modernizr to enable HTML5 elements -->
+  <script src="includes/modernizr-1.6.min.js"></script>
 
 </head>
 
@@ -76,14 +76,14 @@
     </footer>
   </div> <!-- end of #wrapper -->
 
+	<!-- Include jQuery -->
+	<script src="includes/jquery-1.4.4.min.js"></script>
+	
+	<!-- Include Keyboard Article Navigation Plugin -->
+	<script src="jquery.kan.js"></script>
 
-  <!-- Javascript at the bottom for fast page loading -->
-
-  <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
-  
-  <script src="jquery.kan.js"></script>  
-  	<script>
+	<!-- Init Keyboard Article Navigation -->  
+	<script>
 	jQuery(document).ready(function() 
 	{
 		jQuery('#content ul li').kan({
@@ -95,15 +95,8 @@
 			'prev' : '.nav-previous',
 			'html' : '<span style="color: #4273DB;">&#9658;</span>'
 		});
-		
-	jQuery('.2hentry').kan('add');
 	});
-	</script>   
-  
-  <!--[if lt IE 7 ]>
-    <script src="js/libs/dd_belatedpng.js"></script>
-    <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
-  <![endif]-->
-
+	</script>
+   
 </body>
 </html>
