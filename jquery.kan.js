@@ -34,7 +34,6 @@
 		
 			//Work on Each Article Element Given
 			this.each(function(n){
-				this.index = n;
 				$(this).addClass('kan-article');
 			});
 
