@@ -61,7 +61,7 @@
 
 			//Bind Keydown Event
 			$(document).bind('keydown.kan', function(e) {
-				if ( e.keyCode == 38 && settings.current.prevAll('.kan-article:first').length != 0 && !focus ) //If Up Arrow
+				if ( e.keyCode === 38 && settings.current.prevAll('.kan-article:first').length !== 0 && !focus ) //If Up Arrow
 				{				
 					//Set New Active Article					
 					settings.current = settings.current.prevAll('.kan-article:first');				
@@ -77,7 +77,7 @@
 					
 					return false;
 				}
-				else if ( e.keyCode == 40 && settings.current.nextAll('.kan-article:first').length != 0 && !focus ) //If Down Arrow
+				else if ( e.keyCode === 40 && settings.current.nextAll('.kan-article:first').length !== 0 && !focus ) //If Down Arrow
 				{
 					//Set New Active Article						
 					settings.current = settings.current.nextAll('.kan-article:first');				
@@ -93,7 +93,7 @@
 				
 					return false;
 				}
-				else if ( e.keyCode == 13 && !focus ) //If Enter Key
+				else if ( e.keyCode === 13 && !focus ) //If Enter Key
 				{
 					var url = settings.current.find(settings.link).attr('href');
 					window.location.href = url;

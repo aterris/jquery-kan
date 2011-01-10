@@ -104,7 +104,7 @@ body
 	text-decoration:none;
 }
 
-.kan-active
+#content ul li.kan-active
 {
 	background:#f9e5e4;
 	border:1px solid #d60000;
