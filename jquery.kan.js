@@ -105,14 +105,17 @@
 	
 			return this;
 		},
-	
-		focus : function( ) { /* Move KAN Focus to Element */ return this; },
 		
+		add : function ( ) { 
+			return this.each(function(){
+				this.addClass('kan-article');			
+			});
+		},
 		destroy : function( ) {
 
 			return this.each(function(){
 
-				//Unbind Plugin Events
+				//Unbind Events
 				$(document).unbind('.kan');
 				$('input, textarea').unbind('.kan');
 
