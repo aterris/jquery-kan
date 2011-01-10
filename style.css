@@ -55,28 +55,15 @@ body
 	width:20%;
 }
 
-
-#content ul
+.hentry
 {
-	list-style:none;
-	margin: 0px;
-	padding: 0px;
-
-}
-
-#content ul li
-{
+	margin:25px;
+	padding: 25px;
 	border:1px solid #ddd;
 	-moz-border-radius: 7px;
 	-webkit-border-radius: 7px;
 	border-radius: 7px;
 	background:#f8f8f8;
-	margin:25px;
-}
-
-.hentry
-{
-	margin:25px;
 	text-shadow:1px 1px 2px #eee;
 }
 
