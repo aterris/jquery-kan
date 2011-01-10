@@ -4,8 +4,6 @@
 // Version:0.1
 // Andrew Terris
 //
-/* Andrew Terris */
-
 
 (function( $ ){
 
