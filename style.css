@@ -1,0 +1,55 @@
+#wrapper
+{
+	width:960px;
+	margin: 0px auto;
+	padding: 0px;
+}
+
+header form
+{
+	width:400px;
+	margin: 0px auto;
+}
+
+
+#content 
+{
+	width:625px;
+	margin: 0px auto;
+}
+
+#content ul
+{
+	list-style:none;
+
+}
+
+#content ul li
+{
+	border:1px solid #ddd;
+	-moz-border-radius: 7px; /* FF1+ */
+	-webkit-border-radius: 7px; /* Saf3-4 */
+	border-radius: 7px; /* Opera 10.5, IE9, Saf5, Chrome */
+	background:#f8f8f8;
+	margin:25px;
+}
+
+#content ul li .hentry
+{
+	margin:25px;
+}
+
+#content ul li.kan-active
+{
+	background:#f9e5e4;
+}
+
+#content ul li .entry-title
+{
+	margin:0px;
+}
+#content ul li .entry-title a
+{
+	color:#444;
+	text-decoration:none;
+}
