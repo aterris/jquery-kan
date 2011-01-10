@@ -86,6 +86,7 @@
 	<script>
 	jQuery(document).ready(function() 
 	{
+		//Initialize Keyboard Article Navigation		
 		jQuery('#content ul li').kan({
 			'anchor' : '.entry-title',
 			'link' : '.entry-title a',			
@@ -95,7 +96,12 @@
 			'prev' : '.nav-previous',
 			'html' : '<span style="color: #4273DB;">&#9658;</span>'
 		});
-		jQuery('#content ul li').kan('destroy');
+
+		//Add Additional Articles
+		//jQuery('.hentry2').kan('add');
+
+		//Turn Off Keyboard Article Navigation
+		//jQuery('body').kan('destroy');
 	});
 	</script>
    
