@@ -74,25 +74,37 @@ body
 	margin:25px;
 }
 
-#content ul li .hentry
+.hentry
 {
 	margin:25px;
 	text-shadow:1px 1px 2px #eee;
 }
 
-#content ul li .entry-title
+.entry-title
 {
 	margin:0px;
 }
 
-#content ul li .entry-title a
+.entry-title a
 {
 	color:#444;
 	text-shadow:2px 2px 4px #ccc;
 	text-decoration:none;
 }
 
-#content ul li.kan-active
+.entry-meta
+{
+	font-size:12px;
+	margin:0px;
+}
+
+.entry-meta a
+{
+	color:#d60000;
+	text-decoration:none;
+}
+
+.kan-active
 {
 	background:#f9e5e4;
 	border:1px solid #d60000;
